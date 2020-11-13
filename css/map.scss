@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,800;1,800&display=swap');
+
+$blue1: #718bfc;
+$blue2: #90a6f4;
+$red1: #ff4f6f;
+$red2: #ff7d6c;
+$yellow1: #fea44c;
+$yellow2: #fec544;
+$purple1: #a442e3;
+$purple2: #f93df4;
+$aqua1: #8393eb;
+$aqua2: #74bdf0;
+
+
+$white: #FFF;
+$light: #e5e1e2;
+$grey1: #82898f;
+
+$color-map: (
+        red : (shade: $red1, base: $red2),
+        yellow: (shade: $yellow1, base: $yellow2),
+        purple: (shade: $purple1, base: $purple2),
+        aqua : (shade: $aqua1, base: $aqua2)
+);
+@each $name, $colors in $color-map {
+  #austria-map .st0[data_color="#{$name}"] {
+    &.active{
+      fill:#{map-get($colors, base)};
+    }
+    &.hover, &:hover {
+      fill:#{map-get($colors, shade)};
+    }
+  }
+  .container .description li[data_color="#{$name}"] {
+    &:before {
+      background-color: #{map-get($colors, base)};
+    }
+    &.active h2 {
+      color:#{map-get($colors, base)};
+    }
+  }
+}
+
+body {
+  background-color: $light;
+  font-family: Nunito, sans-serif;
+  padding: 3.75em;
+  line-height: 1.5;
+
+  h1,h2,h3,h4 {
+    font-weight: 800;
+    margin: 0
+  }
+  h1 {
+    font-size: 2.25em;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.125em;
+  }
+  a {
+    text-decoration: none;
+    font-weight: 800;
+    color: $blue2;
+    &:hover {
+      color: $blue1
+    }
+  }
+  .footer {
+    text-align: center;
+    margin-top: 3em;
+  }
+  .emphasis {
+    font-style: italic;
+    color: $blue1;
+  }
+  .placeholder {
+    display: inline-block;
+    width: 100%;
+    color: #AAA;
+    text-align: center;
+  }
+}
+
+#austria-map {
+  display: block;
+  margin: 1.5em auto;
+  .st0 {
+    fill:$grey1;
+    stroke:$light;
+    stroke-width:3;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    cursor: pointer;
+    transition: all 800ms;
+    &.active{
+      fill:$blue2;
+    }
+    &.hover, &:hover {
+      fill:$blue1;
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 750px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  .description {
+    flex: 0 0 auto;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    width: 225px;
+    li {
+      height: 35px;
+      cursor: pointer;
+      transition: all 400ms;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $blue1;
+        vertical-align: 1px;
+      }
+      &.hover, &:hover {
+        h2 {
+          transform: scale(1.1);
+          color:$blue1;
+        }
+      }
+      &.active {
+        h2 {
+          transform: scale(1.25);
+          color:$blue2;
+        }
+      }
+      h2 {
+        display: inline-block;
+        transform-origin: 0 60%;
+        transition: transform 300ms;
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+  #description_box {
+    flex: 1 1 100%;
+    padding: 1em 2em;
+    background-color: $white;
+    border: 2px solid $blue1;
+    border-radius: 11px;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    p {
+      text-align: left;
+    }
+    h2 {
+      font-size: 2em;
+    }
+  }
+}

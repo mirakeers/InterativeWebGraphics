@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans&display=swap');
+
+$grey1: #bdbec0;
+
+$aqua: #0caba7;
+$orange: #f3951b;
+$pink: #e52a77;
+$blue: #1976bb;
+
+$light: #e6e7e9;
+$dark: #444;
+
+$border_style: 2px solid $grey1;
+
+$offset: 200px;
+
+$radius1_inner: 118px;
+$radius1_outer: 120px;
+$radius2: 90px;
+$radius3: 60px;
+$radius4: 30px;
+
+$pi: 3.14159265358979;
+
+$color-map: (
+        orange: $orange,
+        pink: $pink,
+        blue: $blue
+);
+@each $name, $color in $color-map {
+  .dataPoint.#{$name} {
+    .label h2 {
+      color: #{$color};
+    }
+    .line {
+      border-color: #{$color};
+      &:after {
+        background-color: #{$color};
+      }
+    }
+    h3 {
+      color: #{$color};
+    }
+    .description {
+      border-color: #{$color};
+    }
+    .dot .circle.lvl3 {
+      stroke: #{$color};
+    }
+    .dot .circle.lvl4 {
+      fill: #{$color};
+    }
+  }
+}
+
+body {
+  background-color: $light;
+  font-family: Abel, sans-serif;
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
+  h1 {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5em;
+    color: $dark;
+    padding: 0 0 .3em 0;
+    margin: 0;
+    border-bottom: $border_style;
+  }
+  .footer {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-top: 3em;
+  }
+  a {
+    text-decoration: none;
+    font-weight: 800;
+    color: $aqua;
+    transition: color 200ms;
+    &:hover {
+     color: $blue;
+    }
+  }
+}
+.container {
+  max-width: 1000px;
+  margin: 5em auto;
+  .timeline {
+    * {
+      box-sizing: border-box;
+    }
+    .axis {
+      border-left: $border_style;
+      margin-left: $offset;
+      padding: 80px 0 50px;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: -8px;
+        bottom: -8px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: $grey1;
+      }
+
+      .dataPoint {
+        display: grid;
+        margin-top: -1em;
+        margin-bottom: -1em;
+        margin-left: -$offset;
+        grid-template-columns: ($offset - $radius1_outer) $radius1_outer $radius2 ($radius1_outer - $radius2) 150px auto;
+        align-items: center;
+        transition: margin 800ms;
+
+        &:not(.active) {
+          @keyframes pulse {
+            0% { transform: scale(1, 1); }
+            60% { transform: scale(1.25, 1.25); }
+            100% { transform: scale(1, 1);}
+          }
+          @keyframes rotate {
+            0% { transform: rotate(-90deg); }
+            100% { transform: rotate(270deg);}
+          }
+          .dot:hover {
+            .circle.lvl4 {
+              animation: pulse 1s ease-out infinite;
+            }
+            .circle.lvl3 {
+              stroke-dashoffset: 20!important;
+              animation: rotate 800ms linear infinite;
+            }
+          }
+        }
+        &:hover, &.active {
+          .dot, .label {
+            transform: scale(1);
+          }
+        }
+
+        > * {
+          grid-row: 1;
+        }
+
+        h3 {
+          font-weight: 400;
+          text-transform: uppercase;
+          font-size: 1.7em;
+          color: $aqua;
+        }
+
+        .title {
+          grid-column: 4 / span 3;
+        }
+
+        .label {
+          grid-column: 1 / span 1;
+          transform: scale(.7);
+          transform-origin: 100% 50%;
+          transition: transform 600ms;
+
+          h2 {
+            color: $aqua;
+            margin: 0;
+            font-size: 2.5em;
+            text-align: right;
+          }
+        }
+
+        .line {
+          grid-column: 4 / span 2;
+          border-top: 2px solid $aqua;
+          z-index: 3;
+          position: relative;
+          max-width: 0;
+          opacity: 0;
+
+          &:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            right: -8px;
+            top: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: $aqua;
+          }
+        }
+
+        .description {
+          grid-column: 6 / span 1;
+          margin-left: 1.5em;
+          padding-left: 1em;
+          border-left: 4px solid $aqua;
+          max-height: 0;
+          overflow: hidden;
+
+          h3 {
+            opacity: 0;
+            margin: 0;
+          }
+
+          p {
+            opacity: 0;
+            margin: 0;
+          }
+        }
+
+        .dot {
+          grid-column: 2 / span 3;
+          transform: scale(.7);
+          transform-origin: 50% 50%;
+          cursor: pointer;
+          transition: transform 600ms;
+          .circle {
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            fill: none;
+            transform-origin: 50% 50%;
+            transform: rotate(-90deg);
+            &.lvl1 {
+              stroke:$grey1;
+              stroke-width:2;
+              stroke-dasharray: 2 * $pi * $radius1_inner;
+              stroke-dashoffset: 2 * $pi * $radius1_inner;
+            }
+            &.lvl2 {
+              stroke:$grey1;
+              stroke-width:2;
+              stroke-dasharray: 2 * $pi * $radius2;
+              stroke-dashoffset: 2 * $pi * $radius2;
+            }
+            &.lvl3 {
+              stroke: $aqua;
+              stroke-width:4;
+              stroke-dasharray: 2 * $pi * $radius3;
+              stroke-dashoffset: 0;
+            }
+            &.lvl4 {
+              fill: $aqua;
+            }
+          }
+        }
+
+        $color-map: (
+                orange: $orange,
+                pink: $pink,
+                blue: $blue
+        );
+        @each $name, $color in $color-map {
+          &.#{$name} {
+            .label h2 {
+              color: #{$color};
+            }
+            .line {
+              border-color: #{$color};
+              &:after {
+                background-color: #{$color};
+              }
+            }
+            h3 {
+              color: #{$color};
+            }
+            .description {
+              border-color: #{$color};
+            }
+            .dot .circle.lvl3 {
+              stroke: #{$color};
+            }
+            .dot .circle.lvl4 {
+              fill: #{$color};
+            }
+          }
+        }
+      }
+    }
+  }
+}

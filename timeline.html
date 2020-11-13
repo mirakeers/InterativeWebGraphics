@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--JQuery UI Library-->
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/timeline.css">
+    <script src="js/timeline.js"></script>
+    <title>Interactive Web Graphics</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>The history of HTML</h1>
+    <div class="timeline">
+        <div class="axis"><!--the vertical axis where all the dots are aligned on -->
+
+            <div class="dataPoint aqua active"><!--each dataPoint represents one key moment-->
+                <div class="label"><!--label left to the dot-->
+                    <h2>1989</h2>
+                </div>
+                <div class="dot">
+                    <svg height="240" width="240">
+                        <circle class="circle lvl1" cx="120" cy="120" r="118" /><!--most outer circle-->
+                        <circle class="circle lvl2" cx="120" cy="120" r="90" />
+                        <circle class="circle lvl3" cx="120" cy="120" r="60" />
+                        <circle class="circle lvl4" cx="120" cy="120" r="30" /><!--most inner circle-->
+                    </svg>
+                </div>
+                <div class="line"></div><!--line right to the dot-->
+                <div class="description"><!--description right to the line-->
+                    <h3>Inception</h3>
+                    <p>Tim Berners-Lee began to come up with the concept of HTML as he was working with CERN. Soon the internet was invented by him.</p>
+                </div>
+                <h3 class="title"></h3><!--empty tag used to display the title within 'description' on hover-->
+            </div><!--end dataPoint-->
+            <div class="dataPoint orange">
+                <div class="label">
+                    <h2>1993</h2>
+                </div>
+                <div class="dot">
+                    <svg height="240" width="240">
+                        <circle class="circle lvl1" cx="120" cy="120" r="118" />
+                        <circle class="circle lvl2" cx="120" cy="120" r="90" />
+                        <circle class="circle lvl3" cx="120" cy="120" r="60" />
+                        <circle class="circle lvl4" cx="120" cy="120" r="30" />
+                    </svg>
+                </div>
+                <div class="line"></div>
+                <div class="description">
+                    <h3>Mosaic</h3>
+                    <p>Version 1 of Mosaic Browser was released for the Sun Microsystems's Inc. This extended features, including images, forms, and lists. There was starting of another browser as well, the Arena Browser.</p>
+                </div>
+                <h3 class="title"></h3>
+            </div><!--end dataPoint-->
+            <div class="dataPoint pink">
+                <div class="label">
+                    <h2>1994</h2>
+                </div>
+                <div class="dot">
+                    <svg height="240" width="240">
+                        <circle class="circle lvl1" cx="120" cy="120" r="118" />
+                        <circle class="circle lvl2" cx="120" cy="120" r="90" />
+                        <circle class="circle lvl3" cx="120" cy="120" r="60" />
+                        <circle class="circle lvl4" cx="120" cy="120" r="30" />
+                    </svg>
+                </div>
+                <div class="line"></div>
+                <div class="description">
+                    <h3>HTML 2.0</h3>
+                    <p>HTML 2.0 is beginning to be formed and readying for release. HTML was to include everything 1.0 had with new added features.</p>
+                </div>
+                <h3 class="title"></h3>
+            </div><!--end dataPoint-->
+            <div class="dataPoint blue">
+                <div class="label">
+                    <h2>1997</h2>
+                </div>
+                <div class="dot">
+                    <svg height="240" width="240">
+                        <circle class="circle lvl1" cx="120" cy="120" r="118" />
+                        <circle class="circle lvl2" cx="120" cy="120" r="90" />
+                        <circle class="circle lvl3" cx="120" cy="120" r="60" />
+                        <circle class="circle lvl4" cx="120" cy="120" r="30" />
+                    </svg>
+                </div>
+                <div class="line"></div>
+                <div class="description">
+                    <h3>Further development</h3>
+                    <p>HTML 3.2 is completed and released to the public. Later in the year, HTML 4.0 is created.</p>
+                </div>
+                <h3 class="title"></h3>
+            </div><!--end dataPoint-->
+            <div class="dataPoint aqua">
+                <div class="label">
+                    <h2>1998</h2>
+                </div>
+                <div class="dot">
+                    <svg height="240" width="240">
+                        <circle class="circle lvl1" cx="120" cy="120" r="118" />
+                        <circle class="circle lvl2" cx="120" cy="120" r="90" />
+                        <circle class="circle lvl3" cx="120" cy="120" r="60" />
+                        <circle class="circle lvl4" cx="120" cy="120" r="30" />
+                    </svg>
+                </div>
+                <div class="line"></div>
+                <div class="description">
+                    <h3>Takeover</h3>
+                    <p>W3C membership stopped evolving HTML. Instead work began on an XML-based equal, named XHTML. This was a reformulation of HTML 4.0 into XML code, also known as XHTML 1.0.</p>
+                </div>
+                <h3 class="title"></h3>
+            </div><!--end dataPoint-->
+            <div class="dataPoint orange">
+                <div class="label">
+                    <h2>2004</h2>
+                </div>
+                <div class="dot">
+                    <svg height="240" width="240">
+                        <circle class="circle lvl1" cx="120" cy="120" r="118" />
+                        <circle class="circle lvl2" cx="120" cy="120" r="90" />
+                        <circle class="circle lvl3" cx="120" cy="120" r="60" />
+                        <circle class="circle lvl4" cx="120" cy="120" r="30" />
+                    </svg>
+                </div>
+                <div class="line"></div>
+                <div class="description">
+                    <h3>Rebirth</h3>
+                    <p>HTML's evolution was reopened and began being tested on, starting on HTML5 as well as early draft proposals. Soon, Apple, Mozilla, and Opera jointly announced their intent to continue working on this effort.</p>
+                </div>
+                <h3 class="title"></h3>
+            </div><!--end dataPoint-->
+
+        </div><!--end axis-->
+    </div><!--end timeline-->
+    <div class="footer">
+        <small>Text by <a href="https://www.sutori.com/story/html-history-timeline--wpXkELUoUTaKjiQxPFxy9vD4" target="_blank">sutori.com</a></small>
+    </div>
+</div><!--end container-->
+
+</body>
+</html>

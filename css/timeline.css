@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans&display=swap");
+.dataPoint.orange .label h2 {
+  color: #f3951b;
+}
+.dataPoint.orange .line {
+  border-color: #f3951b;
+}
+.dataPoint.orange .line:after {
+  background-color: #f3951b;
+}
+.dataPoint.orange h3 {
+  color: #f3951b;
+}
+.dataPoint.orange .description {
+  border-color: #f3951b;
+}
+.dataPoint.orange .dot .circle.lvl3 {
+  stroke: #f3951b;
+}
+.dataPoint.orange .dot .circle.lvl4 {
+  fill: #f3951b;
+}
+
+.dataPoint.pink .label h2 {
+  color: #e52a77;
+}
+.dataPoint.pink .line {
+  border-color: #e52a77;
+}
+.dataPoint.pink .line:after {
+  background-color: #e52a77;
+}
+.dataPoint.pink h3 {
+  color: #e52a77;
+}
+.dataPoint.pink .description {
+  border-color: #e52a77;
+}
+.dataPoint.pink .dot .circle.lvl3 {
+  stroke: #e52a77;
+}
+.dataPoint.pink .dot .circle.lvl4 {
+  fill: #e52a77;
+}
+
+.dataPoint.blue .label h2 {
+  color: #1976bb;
+}
+.dataPoint.blue .line {
+  border-color: #1976bb;
+}
+.dataPoint.blue .line:after {
+  background-color: #1976bb;
+}
+.dataPoint.blue h3 {
+  color: #1976bb;
+}
+.dataPoint.blue .description {
+  border-color: #1976bb;
+}
+.dataPoint.blue .dot .circle.lvl3 {
+  stroke: #1976bb;
+}
+.dataPoint.blue .dot .circle.lvl4 {
+  fill: #1976bb;
+}
+
+body {
+  background-color: #e6e7e9;
+  font-family: Abel, sans-serif;
+}
+body p {
+  font-family: "Open Sans", sans-serif;
+}
+body h1 {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 5em;
+  color: #444;
+  padding: 0 0 0.3em 0;
+  margin: 0;
+  border-bottom: 2px solid #bdbec0;
+}
+body .footer {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  margin-top: 3em;
+}
+body a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #0caba7;
+  transition: color 200ms;
+}
+body a:hover {
+  color: #1976bb;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 5em auto;
+}
+.container .timeline * {
+  box-sizing: border-box;
+}
+.container .timeline .axis {
+  border-left: 2px solid #bdbec0;
+  margin-left: 200px;
+  padding: 80px 0 50px;
+  position: relative;
+}
+.container .timeline .axis:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: -8px;
+  bottom: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #bdbec0;
+}
+.container .timeline .axis .dataPoint {
+  display: grid;
+  margin-top: -1em;
+  margin-bottom: -1em;
+  margin-left: -200px;
+  grid-template-columns: 80px 120px 90px 30px 150px auto;
+  align-items: center;
+  transition: margin 800ms;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+  }
+  60% {
+    transform: scale(1.25, 1.25);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+.container .timeline .axis .dataPoint:not(.active) .dot:hover .circle.lvl4 {
+  animation: pulse 1s ease-out infinite;
+}
+.container .timeline .axis .dataPoint:not(.active) .dot:hover .circle.lvl3 {
+  stroke-dashoffset: 20 !important;
+  animation: rotate 800ms linear infinite;
+}
+.container .timeline .axis .dataPoint:hover .dot, .container .timeline .axis .dataPoint:hover .label, .container .timeline .axis .dataPoint.active .dot, .container .timeline .axis .dataPoint.active .label {
+  transform: scale(1);
+}
+.container .timeline .axis .dataPoint > * {
+  grid-row: 1;
+}
+.container .timeline .axis .dataPoint h3 {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.7em;
+  color: #0caba7;
+}
+.container .timeline .axis .dataPoint .title {
+  grid-column: 4/span 3;
+}
+.container .timeline .axis .dataPoint .label {
+  grid-column: 1/span 1;
+  transform: scale(0.7);
+  transform-origin: 100% 50%;
+  transition: transform 600ms;
+}
+.container .timeline .axis .dataPoint .label h2 {
+  color: #0caba7;
+  margin: 0;
+  font-size: 2.5em;
+  text-align: right;
+}
+.container .timeline .axis .dataPoint .line {
+  grid-column: 4/span 2;
+  border-top: 2px solid #0caba7;
+  z-index: 3;
+  position: relative;
+  max-width: 0;
+  opacity: 0;
+}
+.container .timeline .axis .dataPoint .line:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #0caba7;
+}
+.container .timeline .axis .dataPoint .description {
+  grid-column: 6/span 1;
+  margin-left: 1.5em;
+  padding-left: 1em;
+  border-left: 4px solid #0caba7;
+  max-height: 0;
+  overflow: hidden;
+}
+.container .timeline .axis .dataPoint .description h3 {
+  opacity: 0;
+  margin: 0;
+}
+.container .timeline .axis .dataPoint .description p {
+  opacity: 0;
+  margin: 0;
+}
+.container .timeline .axis .dataPoint .dot {
+  grid-column: 2/span 3;
+  transform: scale(0.7);
+  transform-origin: 50% 50%;
+  cursor: pointer;
+  transition: transform 600ms;
+}
+.container .timeline .axis .dataPoint .dot .circle {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+}
+.container .timeline .axis .dataPoint .dot .circle.lvl1 {
+  stroke: #bdbec0;
+  stroke-width: 2;
+  stroke-dasharray: 741.4158662472px;
+  stroke-dashoffset: 741.4158662472px;
+}
+.container .timeline .axis .dataPoint .dot .circle.lvl2 {
+  stroke: #bdbec0;
+  stroke-width: 2;
+  stroke-dasharray: 565.4866776462px;
+  stroke-dashoffset: 565.4866776462px;
+}
+.container .timeline .axis .dataPoint .dot .circle.lvl3 {
+  stroke: #0caba7;
+  stroke-width: 4;
+  stroke-dasharray: 376.9911184308px;
+  stroke-dashoffset: 0;
+}
+.container .timeline .axis .dataPoint .dot .circle.lvl4 {
+  fill: #0caba7;
+}
+.container .timeline .axis .dataPoint.orange .label h2 {
+  color: #f3951b;
+}
+.container .timeline .axis .dataPoint.orange .line {
+  border-color: #f3951b;
+}
+.container .timeline .axis .dataPoint.orange .line:after {
+  background-color: #f3951b;
+}
+.container .timeline .axis .dataPoint.orange h3 {
+  color: #f3951b;
+}
+.container .timeline .axis .dataPoint.orange .description {
+  border-color: #f3951b;
+}
+.container .timeline .axis .dataPoint.orange .dot .circle.lvl3 {
+  stroke: #f3951b;
+}
+.container .timeline .axis .dataPoint.orange .dot .circle.lvl4 {
+  fill: #f3951b;
+}
+.container .timeline .axis .dataPoint.pink .label h2 {
+  color: #e52a77;
+}
+.container .timeline .axis .dataPoint.pink .line {
+  border-color: #e52a77;
+}
+.container .timeline .axis .dataPoint.pink .line:after {
+  background-color: #e52a77;
+}
+.container .timeline .axis .dataPoint.pink h3 {
+  color: #e52a77;
+}
+.container .timeline .axis .dataPoint.pink .description {
+  border-color: #e52a77;
+}
+.container .timeline .axis .dataPoint.pink .dot .circle.lvl3 {
+  stroke: #e52a77;
+}
+.container .timeline .axis .dataPoint.pink .dot .circle.lvl4 {
+  fill: #e52a77;
+}
+.container .timeline .axis .dataPoint.blue .label h2 {
+  color: #1976bb;
+}
+.container .timeline .axis .dataPoint.blue .line {
+  border-color: #1976bb;
+}
+.container .timeline .axis .dataPoint.blue .line:after {
+  background-color: #1976bb;
+}
+.container .timeline .axis .dataPoint.blue h3 {
+  color: #1976bb;
+}
+.container .timeline .axis .dataPoint.blue .description {
+  border-color: #1976bb;
+}
+.container .timeline .axis .dataPoint.blue .dot .circle.lvl3 {
+  stroke: #1976bb;
+}
+.container .timeline .axis .dataPoint.blue .dot .circle.lvl4 {
+  fill: #1976bb;
+}
+
+/*# sourceMappingURL=timeline.css.map */

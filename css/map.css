@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,800;1,800&display=swap");
+#austria-map .st0[data_color=red].active {
+  fill: #ff7d6c;
+}
+#austria-map .st0[data_color=red].hover, #austria-map .st0[data_color=red]:hover {
+  fill: #ff4f6f;
+}
+
+.container .description li[data_color=red]:before {
+  background-color: #ff7d6c;
+}
+.container .description li[data_color=red].active h2 {
+  color: #ff7d6c;
+}
+
+#austria-map .st0[data_color=yellow].active {
+  fill: #fec544;
+}
+#austria-map .st0[data_color=yellow].hover, #austria-map .st0[data_color=yellow]:hover {
+  fill: #fea44c;
+}
+
+.container .description li[data_color=yellow]:before {
+  background-color: #fec544;
+}
+.container .description li[data_color=yellow].active h2 {
+  color: #fec544;
+}
+
+#austria-map .st0[data_color=purple].active {
+  fill: #f93df4;
+}
+#austria-map .st0[data_color=purple].hover, #austria-map .st0[data_color=purple]:hover {
+  fill: #a442e3;
+}
+
+.container .description li[data_color=purple]:before {
+  background-color: #f93df4;
+}
+.container .description li[data_color=purple].active h2 {
+  color: #f93df4;
+}
+
+#austria-map .st0[data_color=aqua].active {
+  fill: #74bdf0;
+}
+#austria-map .st0[data_color=aqua].hover, #austria-map .st0[data_color=aqua]:hover {
+  fill: #8393eb;
+}
+
+.container .description li[data_color=aqua]:before {
+  background-color: #74bdf0;
+}
+.container .description li[data_color=aqua].active h2 {
+  color: #74bdf0;
+}
+
+body {
+  background-color: #e5e1e2;
+  font-family: Nunito, sans-serif;
+  padding: 3.75em;
+  line-height: 1.5;
+}
+body h1, body h2, body h3, body h4 {
+  font-weight: 800;
+  margin: 0;
+}
+body h1 {
+  font-size: 2.25em;
+  text-align: center;
+}
+body h2 {
+  font-size: 1.125em;
+}
+body a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #90a6f4;
+}
+body a:hover {
+  color: #718bfc;
+}
+body .footer {
+  text-align: center;
+  margin-top: 3em;
+}
+body .emphasis {
+  font-style: italic;
+  color: #718bfc;
+}
+body .placeholder {
+  display: inline-block;
+  width: 100%;
+  color: #AAA;
+  text-align: center;
+}
+
+#austria-map {
+  display: block;
+  margin: 1.5em auto;
+}
+#austria-map .st0 {
+  fill: #82898f;
+  stroke: #e5e1e2;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: all 800ms;
+}
+#austria-map .st0.active {
+  fill: #90a6f4;
+}
+#austria-map .st0.hover, #austria-map .st0:hover {
+  fill: #718bfc;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 750px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.container .description {
+  flex: 0 0 auto;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  width: 225px;
+}
+.container .description li {
+  height: 35px;
+  cursor: pointer;
+  transition: all 400ms;
+}
+.container .description li:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #718bfc;
+  vertical-align: 1px;
+}
+.container .description li.hover h2, .container .description li:hover h2 {
+  transform: scale(1.1);
+  color: #718bfc;
+}
+.container .description li.active h2 {
+  transform: scale(1.25);
+  color: #90a6f4;
+}
+.container .description li h2 {
+  display: inline-block;
+  transform-origin: 0 60%;
+  transition: transform 300ms;
+}
+.container .description li p {
+  display: none;
+}
+.container #description_box {
+  flex: 1 1 100%;
+  padding: 1em 2em;
+  background-color: #FFF;
+  border: 2px solid #718bfc;
+  border-radius: 11px;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+.container #description_box p {
+  text-align: left;
+}
+.container #description_box h2 {
+  font-size: 2em;
+}
+
+/*# sourceMappingURL=map.css.map */
