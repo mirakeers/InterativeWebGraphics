@@ -60,6 +60,7 @@ body {
   font-family: Nunito, sans-serif;
   padding: 3.75em;
   line-height: 1.5;
+  color: #333;
 }
 body h1, body h2, body h3, body h4 {
   font-weight: 800;
@@ -146,7 +147,7 @@ body .placeholder {
 }
 .container .description li.hover h2, .container .description li:hover h2 {
   transform: scale(1.1);
-  color: #718bfc;
+  color: #000;
 }
 .container .description li.active h2 {
   transform: scale(1.25);
@@ -155,7 +156,7 @@ body .placeholder {
 .container .description li h2 {
   display: inline-block;
   transform-origin: 0 60%;
-  transition: transform 300ms;
+  transition: transform 500ms, color 300ms;
 }
 .container .description li p {
   display: none;

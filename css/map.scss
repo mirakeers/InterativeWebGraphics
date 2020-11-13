@@ -14,6 +14,7 @@ $aqua2: #74bdf0;
 
 $white: #FFF;
 $light: #e5e1e2;
+$dark: #333;
 $grey1: #82898f;
 
 $color-map: (
@@ -46,6 +47,7 @@ body {
   font-family: Nunito, sans-serif;
   padding: 3.75em;
   line-height: 1.5;
+  color: $dark;
 
   h1,h2,h3,h4 {
     font-weight: 800;
@@ -131,7 +133,7 @@ body {
       &.hover, &:hover {
         h2 {
           transform: scale(1.1);
-          color:$blue1;
+          color:#000;
         }
       }
       &.active {
@@ -143,7 +145,7 @@ body {
       h2 {
         display: inline-block;
         transform-origin: 0 60%;
-        transition: transform 300ms;
+        transition: transform 500ms, color 300ms;
       }
       p {
         display: none;
