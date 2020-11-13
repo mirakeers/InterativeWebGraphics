@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dffbb23-09c3-4543-88d1-82ff7131868f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/InterativeWebGraphics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/InterativeWebGraphics.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/map.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/map.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/map.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/map.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/map.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/map.scss" afterDir="false" />
     </list>
@@ -19,6 +19,13 @@
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -26,7 +33,8 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mirakeers.github.io" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RunDashboard">
@@ -51,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605276848002</updated>
-      <workItem from="1605276849268" duration="1630000" />
+      <workItem from="1605276849268" duration="4977000" />
     </task>
     <servers />
   </component>
